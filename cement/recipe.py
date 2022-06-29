@@ -29,8 +29,8 @@ def transform_data_for_model(df):
     #materials = materials.apply(zscore)
     #generate interaction columns
     col1=num_cols
-#    col2=num_cols
-    for i in product(col1):
+    col2=num_cols
+    for i in product(col1,col2):
         name="*".join(i)
         materials[name]=materials[list(i)].prod(axis=1)
     x=materials.copy()
