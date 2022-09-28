@@ -10,11 +10,11 @@ rv.loadingPower = 200; %W
 
 rv.unloadingRate = 600/3600; %kg/s
 
-rv.speedCoef= -.0005; % (m/s)/kg
+rv.speedCoef= -.00001; % (m/s)/kg
 rv.baseSpeed = 0.5 ; %m/s
-rv.movingPower = 400; %W
+rv.movingPower = 350; %W
 rv.acceleration = 0.05; % m/s2
-rv.powerCoef = 1; %W/kg
+rv.powerCoef = 0.6; %W/kg
 
 rv.baseMass = 105; %kg
 rv.batterySize = 3000*3600; %watt-s
