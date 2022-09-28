@@ -10,11 +10,16 @@ classdef rover
         unloadingRate
         batterySize
         baseSpeed
+        acceleration
+        chargingDistance
+        powerCoef
+        breakingSpeed
 
         breakingPower
         loadingPower
         movingPower
         chargingPower
+        chargingDelay
 
         loadCapacity
     end
