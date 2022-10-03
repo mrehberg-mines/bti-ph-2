@@ -1,3 +1,6 @@
+
+
+
 rv=rover;
 
 rv.breakingRate = 70/3600; %kg/s
@@ -5,7 +8,7 @@ rv.breakingPower = 150; %W
 rv.breakingSpeed = 0.01; %m/s
 rv.loadCapacity = 40; % kg
 
-rv.loadingRate = 100/3600; %kg/s
+rv.loadingRate = 220/3600; %kg/s
 rv.loadingPower = 200; %W
 
 rv.unloadingRate = 600/3600; %kg/s
@@ -18,9 +21,10 @@ rv.powerCoef = 0.6; %W/kg
 
 rv.baseMass = 105; %kg
 rv.batterySize = 3000*3600; %watt-s
-rv.chargingPower = -700; %W
+rv.chargingPower = -650; %W
 rv.chargingDistance = 3; %m
 rv.chargingDelay = 60; %sec
+rv.depthOfDischarge = 0.5; % percent
 
 rvelem(1)=Simulink.BusElement;
 rvelem(1).Name = 'batterySize';
@@ -37,6 +41,11 @@ rvelem(3).DataType = "double";
 rvelem(4)=Simulink.BusElement;
 rvelem(4).Name = 'chargingDelay';
 rvelem(4).DataType = "double";
+
+rvelem(5)=Simulink.BusElement;
+rvelem(5).Name = 'depthOfDischarge';
+rvelem(5).DataType = "double";
+
 
 
 bus_rv = Simulink.Bus;
@@ -91,6 +100,11 @@ y3 = out.simout.gotoState.Data;
 plot(x,y3)
 
 
+averagePower=sum((out.simout.var.Power.Data>=0).*out.simout.var.Power.Data)/...
+    sum(out.simout.var.Power.Data>=0);
 
-disp(max(out.total));
-disp(sum(out.simout.gotoState.Data==5)/3600);
+idleTime=sum(out.simout.gotoState.Data==int8(modes.idle))/3600;
+disp(strcat("kg Delivered: ",string(max(out.total))));
+disp(strcat("Hours Charging: ", string(sum(out.simout.gotoState.Data==5)/3600)));
+disp(strcat("Average Power : ", string(averagePower)));
+disp(strcat("Idle Hours: ",string(idleTime)));

@@ -20,7 +20,7 @@ classdef rover
         movingPower
         chargingPower
         chargingDelay
-
+        depthOfDischarge
         loadCapacity
     end
 end
