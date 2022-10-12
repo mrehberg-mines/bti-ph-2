@@ -15,13 +15,13 @@ rv.unloadingRate = 600/3600; %kg/s
 
 rv.speedCoef= -.00001; % (m/s)/kg
 rv.baseSpeed = 0.5 ; %m/s
-rv.movingPower = 350; %W
+rv.movingPower = 400; %W
 rv.acceleration = 0.05; % m/s2
 rv.powerCoef = 0.6; %W/kg
 
 rv.baseMass = 105; %kg
 rv.batterySize = 3000*3600; %watt-s
-rv.chargingPower = -650; %W
+rv.chargingPower = -700; %W
 rv.chargingDistance = 3; %m
 rv.chargingDelay = 60; %sec
 rv.depthOfDischarge = 0.5; % percent
@@ -84,24 +84,40 @@ curState.Elements = elem;
 
 out=sim("roverSim");
 
-subplot(3,1,1);
+[int_modes, name_modes]=enumeration('modes');
+subplot1=subplot(3,1,1);
 x=out.simout.var.Power.Time./3600;
 
 y1 = out.simout.var.Location.Data;
 plot(x,y1)
 
-subplot(3,1,2); 
-y2 = out.battery./rv.batterySize;
+subplot2=subplot(3,1,2); 
+%y2 = out.battery./rv.batterySize;
 %y2= out.simout.var.Loaded_Mass.Data;
+y2=cumsum((out.simout.var.Power.Data<=0).*(out.simout.var.Power.Data))/3600/-1000;
 plot(x,y2)
 
-subplot(3,1,3); 
+subplot3=subplot(3,1,3); 
 y3 = out.simout.gotoState.Data;
+
 plot(x,y3)
+
+ylabel(subplot1, 'Location (m)');
+
+ylabel(subplot2, 'Charging Station Power (kWh)');
+
+ylabel(subplot3, 'ConOp Mode'); 
+set(subplot3,'YTickLabel',name_modes);
+
+xlabel(subplot3, 'Time (hr)');
+
 
 
 averagePower=sum((out.simout.var.Power.Data>=0).*out.simout.var.Power.Data)/...
     sum(out.simout.var.Power.Data>=0);
+
+dailyPower=sum((out.simout.var.Power.Data=0).*(out.simout.var.Power.Data))/3600/1000;%kWh
+totalPower=dailyPower*15*2; %kWh
 
 idleTime=sum(out.simout.gotoState.Data==int8(modes.idle))/3600;
 disp(strcat("kg Delivered: ",string(max(out.total))));
