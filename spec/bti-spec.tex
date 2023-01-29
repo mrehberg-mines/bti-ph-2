@@ -1,0 +1,80 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document preamble
+\documentclass[10pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage[top=1cm, bottom=3.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ right=20mm,
+ top=20mm,
+ }
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\today}
+
+%\footskip 35pt
+\lfoot{}
+\cfoot{}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\headsep 1.5em
+
+\lstdefinelanguage{AMPL}{keywords={reset,set,model,data,param,var,arc,integer,minimize,maximize,subject,to,node,sum,in,Current,complements,integer,solve_result_num,IN,contains,less,suffix,INOUT,default,logical,sum,Infinity,dimen,max,symbolic,Initial,div,min,table,LOCAL,else,option,then,OUT,environ,setof,union,all,exists,shell_exitcode,until,binary,forall,solve_exitcode,while,by,if,solve_message,within,check,in,solve_result},sensitive=true,comment=[l]{\#}}
+
+\lstset{language=AMPL,
+        showstringspaces=false,
+        basicstyle=\fontsize{7}{7}\ttfamily,
+        numbers=none,
+        keywordstyle=\bfseries,
+        commentstyle=\textit,
+        }
+\renewcommand{\ttdefault}{pcr}
+
+\newcommand{\obar}[1]{\mkern 2mu\overline{\mkern-2mu#1\mkern-2mu}\mkern 2mu}
+\newcommand{\ubar}[1]{\mkern 2mu\underline{\mkern-2mu#1\mkern-2mu}\mkern 2mu}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Add additional packages as needed
+% \usepackage{tikz-network}
+% \newcommand{\tcr}{\textcolor{Red}}
+% \newcommand{\tcg}{\textcolor{Green}}
+% \newcommand{\tcb}{\textcolor{Blue}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Edit these as appropriate
+\chead{\textbf{\Large Mines Break The Ice System Spec}}
+\rhead{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+\begin{document}
+\tableofcontents
+\input{spec-info.tex}
+\end{document}
