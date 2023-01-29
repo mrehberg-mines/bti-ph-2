@@ -1,0 +1,147 @@
+\newpage
+\section{Introduction}
+\subsection{Definitions}
+\subsubsection{Brackets}
+[] indicates an estimated value, or a term or requirement defined in this Spec (or something that maybe should be defined in this Spec but is not yet)
+\subsubsection{Digger Control System (DCS)}
+The Digger Control System refers to the control hardware and software responsible for operating the Digger Systems. It is included in the mass and eneergy consumption requirements of the Digger Systems. 
+\subsubsection{Outpost Digger System (ODS)}
+The Outpost Digger System refers to the total system used to excavate, load, transport, and unload regolith simulant during the Break the Ice challenge. 
+\subsubsection{Digger Systems}
+The term Digger Systems refers to the cumulative subsystems that Mines is responsible for, the Excavation subsystem and the Transfer subsystem. This term also includes the Digger Control Systems.
+\subsubsection{Rover}
+The term rover refers to the Lunar Outpost Cerebus rover that the Digger Systems are attached to. The Cerbus rover provides mobility, power, and data handling for the Digger Systems.
+\subsubsection{Excavation Subsystem}
+The Excavation subsystem is responsible for breaking the regolith simulant into smaller pieces that are accessible for the Transfer subsystem. The principal component of the Excavation subsystem is an impact hammer.
+\subsubsection{Transfer Subsystem}
+The Transfer subsytem is responsible for transferring  regolith simulant to the rover from the ground, containing the simulant while the rover is travelling to the dump site, and transfering simulant from the rover to the ground. The principal component of the Transfer subsystem is a bucket scoop.
+\newpage
+\section{Requirements}
+\subsection{Missions}
+\subsubsection{M1}
+M1 shall be started by September 15th, 2023. M1 is a 15-day duration test where 800 kg of regolith simulant shall be delivered from an excavation pit to a specified drop off location 500 m away. M1 will be performed at the Colorado Air and Space Port (CASP) and will therefore be performed subject to the CASP envrionments.
+\subsubsection{M2}
+M2 will be the Level 3 NASA testing challenge. It will be performed at a NASA test facility and subject to the NASA Test Bed environment. M2 will only be conducted if the ODS system successfully completes M1. The exact details of this mission are presently unknown.
+\subsection{Operational Performance Requirements}
+\subsubsection{Cost}
+The total budget for research, testing, and manufacturing of the Digger Systems shall be less than \$40,000. This amount is half of the sum of the winnings from Phase 1 and half of the Phase 2 Level 1 winnings.  
+\subsubsection{Mass (Digger Systems)}
+The total mass of the Digger Systems shall be less than 25 kg.
+\subsubsection{Mass (Payload Mass)}
+The payload mass of the Rover is [Totat Payload Mass]. Therfore, the amount of simulant that can be carried is the [Total Payload Mass] minus the Digger Systems' mass.
+\subsubsection{Digger Systems Base Energy Consumption}
+The Digger Systems shall consume less than [20] W while the ODS is in the [Travel and Charging] submodes. 
+\subsubsection{Digger Systems Operational Energy Consumption}
+The Digger System shall consume less than [300] W while the ODS is in the [Breaking, Loading, and Unloading] submodes.
+\subsubsection{MOE#1}
+
+\subsubsection{Reliability}
+
+\subsubsection{Maintainability}
+
+\subsubsection{Availability}
+The Digger Systems shall have an uptime of 95\% throughout M1. 
+\subsection{Capabilities}
+\subsubsection{Excavate Simulant}
+The Excavation subsystem shall break regolith simulant into pieces small enough to be within the Transfer subsystem. 
+\subsubsection{Excavation Rate}
+The Excavation subsystem shall [Excavate Simulant] at an average rate of [70] kg/hour throughout the 15-day duration of [M1]. The listed rate should be verified by tests that last at least 30 minutes in duration.  
+\subsubsection{Transfer Simulant to Rover}
+The Transfer subsystem shall transfer Excavated Simulant from the ground to the Tranfer subsystem.  
+\subsubsection{Loading Rate}
+The Transfer subsystem shall be transfer excavated simulant from the ground to the Transfer Subsystem at an average rate of 150 kg/hour throughout the 15-day duration of [M1]. The listed rate should be verified by tests that last at least 20 minutes in duration.  
+\subsubsection{Unloading Rate}
+The Transfer subsystem shall be transfer excavated simulant from the Rover to the [Weigh Station] at an average rate of 600 kg/hour throughout the 15-day duration of [M1]. 
+\subsubsection{Carrying Capacity Measurement}
+The ODS shall estimate the mass of simulant contained within the Transfer Subsystem within +/- [5] kg.
+\subsubsection{Carrying Capacity}
+The Transfer subsystem shall contain [40] kg of Excavated simulant. It is assumed the density of the excavated simulant will have half the density of unexcavated simulant. 
+\subsubsection{Travelling Center of Gravity}
+The Transfer subsytem shall be able to move [40] kg of contained simulant to a location where the ODS's center of gravity is less than [30] cm from the midpoint of the Rover. This is the location that the Transfer subsystem will keep the contained simulant for [Travelling]. This requirement should be flowed into a requirement that defines the angles the Transfer Subsystem shall achieve relative to the Rover.
+\subsubsection{Bucket Scoop Height}
+The Transfer subsystem shall be able to move the leading edge of the bucket scoop to heights [-3 to 0] cm during [Loading] relative to the bottom of the Rover's wheel. [Travelling Center of Gravity] may dictate additional height capabilities for the bucket scoop. 
+\subsubsection{Bucket Scoop Angle}
+The Transfer subsystem shall rotate the bucket scoop to angles [45, 90, 135] within +/- [5] degrees. The measured angle is from the base of the bucket scoop to the z-axis. The base of the bucket scoop pointing straight up is defined as 180 degrees.
+\subsubsection{Bucket Scoop Height Measurement}
+The Transfer subsystem shall estimate the height of the leading edge of the bucket scoop relative to ground within +/- [1] cm. 
+\subsubsection{Bucket Scoop Angle Measurement}
+The Transfer subsystem shall estimate the angle between of the base of the bucket scoop and the [z-axis] at the following angles [45, 90, 135] within +/- [5] degrees.
+\subsubsection{Impact Hammer Height}
+The Excavation subsystem shall move the tip of the impact hammer to heights [-2 to 2] cm measure against the bottom of the Rover's wheel.
+\subsubsection{Impact Hammer Rotation}
+The Excavation Subsystem shall rotate the Impact hammer to angles between [10 to 30] degrees measured between the axis of the impact hammer bit and the z-axis where 0 degrees is the tip of the impact hammer facing the ground. 
+\subsection{External Interfaces}
+\subsubsection{Mechanical}
+The Digger Systems shall mechanically attach to the Rover. The attachment will provide static attachment.
+All necessary degrees of freedom will be provided by the Digger Systems.
+\subsubsection{Electrical Power}
+The Digger Systems shall recieve [28] VDC power from the Rover. 
+\subsubsection{Battery Capacity}
+The Rover should provide electricial endurance for [13 hours]
+\subsubsection{Software Language}
+The Digger Control System shall be written in [C, C++, C#, PLC, or Python]. This requirement is subject to clarification from Lunar Outpost.
+\subsubsection{Software Implementation}
+The Digger Control System shall be executed by compute and hardware provided by Lunar Outpost.
+\subsubsection{Software Communication}
+The Digger Control System shall be controlable by operations
+\subsection{Operating Environments}
+\subsubsection{Water Precipitation or Moisture}
+The Digger systems shall be resistant to water and snow. 
+\subsubsection{Wet environment}
+In M1 The Digger shall be able to operate in a wet environment, such as traversing snow or puddles
+\subsubsection{Wind}
+In M1 the ODS shall be able to handle sustained winds of [local wind speed]
+In M1 the ODS shall be able to handle wind gusts of [local gust speed]
+\subsubsection{Dust}
+The Digger systems shall be tolerant to dust. 
+\subsubsection{Temperature}
+The Digger systems shall withstand ambient temperatures between [30 to 100] degrees Farenheit.
+\subsubsection{Vibration}
+The ODS shall be able to within the vibrations caused by the excavation system runing at [100\% or perhaps include margin]
+\subsubsection{Vacuum}
+The Digger Systems shall use technologies who's fundamental modes of operation can function in a vacuum.
+\subsubsection{Test Facility}
+The Test Facility operating environment includes the [Dust, Water, and Vacuum] environmental requirements. 
+\subsubsection{CASP}
+The CASP operating environment includes the [Water, Dust, Temperature, and Vacuum] environmental requirements. 
+\subsubsection{NASA Test Bed}
+The NASA Test Bed will consist of a gravity offloading apparatus that simulates lunar gravity. All other information about the NASA Test Bed is currently unknown. It is assumed the operating environments includes the [Dust, Water and Vaccum] environmetal requirements.
+\subsubsection{Maintenance }
+The Digger Systems shall be able to be maintained without the need of a clean room environment.
+\subsection{Design and Manufacturing}
+\subsubsection{}
+
+\subsection{Precedence and Criticality of Requirements}
+
+\newpage
+\section{Qualification Provisions}
+\subsection{Responsibility for Verification}
+
+\subsection{Verification Methods}
+
+\subsection{Quality Inspections}
+
+\subsection{Qualification Tests}
+\subsubsection{Electric Control of Excavation Subsystem}
+Success Criteria: Able to control Excavation Subsytem via DCS
+\subsubsection{0.5 Hr Excavation Subsystem Test}
+Success Criteria: Able to excavate [35 kg] of material in 0.5 Hr. 
+\subsubsection{1 Hr Excavation Subsystem Test}
+Success Criteria: Able to excavate [70 kg] of material in 0.5 Hr. 
+Record: Power consumption, vibration, vertical and horizontal force
+\subsubsection{0.5 Hr Excavation Subsystem Test with Rover Integration }
+Success Criteria: Able to excavate [35 kg] of material in 0.5 Hr while with Rover/DCS interface
+Record: Power consumption, vibration, vertical and horizontal force, all Rover data
+\subsubsection{1-Day ODS Test}
+Success Criteria: 800 kg delivered to a deliver site, emulating 1 day of [M1] mission
+\newpage
+\section{Preparation for Deliver}
+\subsection{Packaging}
+\subsubsection{}
+
+\subsection{Handling}
+
+\subsection{Storage}
+
+\subsection{Transportation}
+
