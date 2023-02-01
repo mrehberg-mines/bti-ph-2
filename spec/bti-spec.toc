@@ -1,0 +1,87 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Defined Term}{4}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Brackets}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Carrying Capacity}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Excavation Rate}{4}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Total Payload Mass}{4}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}DS Mass}{4}{subsubsection.1.1.5}%
+\contentsline {subsubsection}{\numberline {1.1.6}Daily Mass}{4}{subsubsection.1.1.6}%
+\contentsline {subsubsection}{\numberline {1.1.7}DS Base Power Consumption}{4}{subsubsection.1.1.7}%
+\contentsline {subsubsection}{\numberline {1.1.8}DS Max Power Consumption}{4}{subsubsection.1.1.8}%
+\contentsline {subsubsection}{\numberline {1.1.9}Excavation Power Interface}{4}{subsubsection.1.1.9}%
+\contentsline {subsubsection}{\numberline {1.1.10}Unloading Rate}{4}{subsubsection.1.1.10}%
+\contentsline {subsubsection}{\numberline {1.1.11}Loading Rate}{4}{subsubsection.1.1.11}%
+\contentsline {subsection}{\numberline {1.2}Definitions}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Digger Control System (DCS)}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Outpost Digger System (ODS)}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Digger Systems (DS)}{5}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Rover}{5}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Excavation Subsystem}{5}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Transfer Subsystem}{5}{subsubsection.1.2.6}%
+\contentsline {section}{\numberline {2}Requirements}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Missions}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}M1}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}M2}{6}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Operational Performance Requirements}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Cost}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Mass (Digger Systems)}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Mass (Payload Mass)}{6}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Digger Systems Base Energy Consumption}{6}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Digger Systems Operational Energy Consumption}{6}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}MOE 1}{6}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Reliability}{6}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}Maintainability}{6}{subsubsection.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.9}Availability}{6}{subsubsection.2.2.9}%
+\contentsline {subsection}{\numberline {2.3}Capabilities}{7}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Excavate Simulant}{7}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Excavation Rate}{7}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Transfer Simulant to Rover}{7}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Loading Rate}{7}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Unloading Rate}{7}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Carrying Capacity Measurement}{7}{subsubsection.2.3.6}%
+\contentsline {subsubsection}{\numberline {2.3.7}Carrying Capacity}{7}{subsubsection.2.3.7}%
+\contentsline {subsubsection}{\numberline {2.3.8}Travelling Center of Gravity}{7}{subsubsection.2.3.8}%
+\contentsline {subsubsection}{\numberline {2.3.9}Bucket Scoop Height}{7}{subsubsection.2.3.9}%
+\contentsline {subsubsection}{\numberline {2.3.10}Bucket Scoop Angle}{7}{subsubsection.2.3.10}%
+\contentsline {subsubsection}{\numberline {2.3.11}Bucket Scoop Height Measurement}{8}{subsubsection.2.3.11}%
+\contentsline {subsubsection}{\numberline {2.3.12}Bucket Scoop Angle Measurement}{8}{subsubsection.2.3.12}%
+\contentsline {subsubsection}{\numberline {2.3.13}Impact Hammer Height}{8}{subsubsection.2.3.13}%
+\contentsline {subsubsection}{\numberline {2.3.14}Impact Hammer Rotation}{8}{subsubsection.2.3.14}%
+\contentsline {subsection}{\numberline {2.4}External Interfaces}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Mechanical}{8}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Electrical Power}{8}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Battery Capacity}{8}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Software Language}{8}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Software Implementation}{8}{subsubsection.2.4.5}%
+\contentsline {subsubsection}{\numberline {2.4.6}Software Communication}{8}{subsubsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.5}Operating Environments}{8}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Water Precipitation or Moisture}{8}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Wet environment}{9}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Wind}{9}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Dust}{9}{subsubsection.2.5.4}%
+\contentsline {subsubsection}{\numberline {2.5.5}Temperature}{9}{subsubsection.2.5.5}%
+\contentsline {subsubsection}{\numberline {2.5.6}Vibration}{9}{subsubsection.2.5.6}%
+\contentsline {subsubsection}{\numberline {2.5.7}Vacuum}{9}{subsubsection.2.5.7}%
+\contentsline {subsubsection}{\numberline {2.5.8}Test Facility}{9}{subsubsection.2.5.8}%
+\contentsline {subsubsection}{\numberline {2.5.9}CASP}{9}{subsubsection.2.5.9}%
+\contentsline {subsubsection}{\numberline {2.5.10}NASA Test Bed}{9}{subsubsection.2.5.10}%
+\contentsline {subsubsection}{\numberline {2.5.11}Maintenance }{9}{subsubsection.2.5.11}%
+\contentsline {subsection}{\numberline {2.6}Design and Manufacturing}{9}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}}{9}{subsubsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.7}Precedence and Criticality of Requirements}{9}{subsection.2.7}%
+\contentsline {section}{\numberline {3}Qualification Provisions}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Responsibility for Verification}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Verification Methods}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Quality Inspections}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Qualification Tests}{10}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Electric Control of Excavation Subsystem}{10}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}0.5 Hr Excavation Subsystem Test}{10}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}1 Hr Excavation Subsystem Test}{10}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}0.5 Hr Excavation Subsystem Test with Rover Integration }{10}{subsubsection.3.4.4}%
+\contentsline {subsubsection}{\numberline {3.4.5}1-Day ODS Test}{10}{subsubsection.3.4.5}%
+\contentsline {section}{\numberline {4}Preparation for Deliver}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Packaging}{11}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}}{11}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Handling}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Storage}{11}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Transportation}{11}{subsection.4.4}%
