@@ -1,6 +1,0 @@
-network laptop:
-matt-home rpi: 192.168.0.241
-matt-home desktop: 192.168.0.1
-
-touch
-touh

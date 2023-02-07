@@ -1,0 +1,4 @@
+matt-home rpi: 192.168.0.241
+matt-home ethernet rpi: 192.168.137.241
+matt-home desktop: 192.168.0.215
+matt-home ethernet desktop: 192.168.137.1
