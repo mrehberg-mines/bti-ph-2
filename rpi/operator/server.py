@@ -15,4 +15,5 @@ while 1:
     if not data: break
     print ("received data:", data)
     conn.send(data)  # echo
-conn.close()
+    if data == "close":
+        conn.close()
