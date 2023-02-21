@@ -20,6 +20,11 @@ def send_command(varID, varValue):
 
     return data
 
+## DAsh Variables ####
+box_style={'backgroundColor':'#ffffff','border': '1px solid black','borderRadius': '4px', 'maxHeight': '30px', 'maxWidth':'300px', 'overflow': 'auto', 'padding':4}
+page_background='#999999'
+
+
 
 ### DASH Application #######
 
@@ -27,10 +32,11 @@ app = Dash(__name__)
 app.layout = html.Div(
     children =[
         html.Br(),
-        'excavator:motor_speed: ',
+        html.H4('excavator:motor_speed: '),
         dcc.Input(
             id="excavator:motor_speed", type="number",
-            debounce=True, placeholder=0, min=0, max=100, step=5,
+            debounce=True, placeholder=0, min=0, max=100,
+            style= box_style,
         ),
         html.Div(id="excavator:motor_speed:return"),
         
@@ -38,11 +44,13 @@ app.layout = html.Div(
         'excavator:motor_power: ',
         dcc.RadioItems(
             id = "excavator:motor_power",
+            style= box_style,
             options=['True', 'False'],
             value='False'
         ),
         html.Div(id="excavator:motor_power:return"),
-    ]
+    ],
+    style={'padding': 10, 'border':'1px solid black','borderRadius' :'10px', 'backgroundColor':page_background}
 )
 
 @app.callback(
