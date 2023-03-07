@@ -71,8 +71,8 @@ def send_var(varID, varValue):
     Input("excavator:motor_power", "value"),
 )
 def send_var(varID, varValue):
-    varReturn = send_command(varID, varValue)
-    return f"{varReturn}"
+    ret_varSys, ret_varID, ret_varValue = send_command(varID, varValue)
+    return f"{ret_varSys}:{ret_varID}:{ret_varValue}"
 
 
 
