@@ -34,45 +34,44 @@ app = Dash(__name__)
 app.layout = html.Div(
     children =[
         html.Br(),
-        html.H4('excavator:motor_speed: '),
+        html.H4('excavator_motor_speed: '),
         dcc.Input(
-            id="excavator:motor_speed", type="number",
+            id="excavator_motor_speed", type="number",
             debounce=True, placeholder=0, min=0, max=100,
             style= box_style,
         ),
-        html.Div(id="excavator:motor_speed:return"),
+        html.Div(id="excavator_motor_speed:return"),
         
         html.Br(),
-        'excavator:motor_power: ',
+        'excavator_motor_power: ',
         dcc.RadioItems(
-            id = "excavator:motor_power",
+            id = "excavator_motor_power",
             style= box_style,
             options=['True', 'False'],
             value='False'
         ),
-        html.Div(id="excavator:motor_power:return"),
+        html.Div(id="excavator_motor_power:return"),
     ],
     style={'padding': 10, 'border':'1px solid black','borderRadius' :'10px', 'backgroundColor':page_background}
 )
 
 @app.callback(
-    Output("excavator:motor_speed:return", "children"),
-    Input("excavator:motor_speed", "id"),
-    Input("excavator:motor_speed", "value"),
+    Output("excavator_motor_speed:return", "children"),
+    Input("excavator_motor_speed", "id"),
+    Input("excavator_motor_speed", "value"),
 )
 def send_var(varID, varValue):
-    ret_varSys, ret_varID, ret_varValue = send_command(varID, varValue)
-    return f"{ret_varSys}:{ret_varID}:{ret_varValue}"
-
+    ret_varID, ret_varValue = send_command(varID, varValue)
+    return f"{ret_varID}:{ret_varValue}"
 
 @app.callback(
-    Output("excavator:motor_power:return", "children"),
-    Input("excavator:motor_power", "id"),
-    Input("excavator:motor_power", "value"),
+    Output("excavator_motor_power:return", "children"),
+    Input("excavator_motor_power", "id"),
+    Input("excavator_motor_power", "value"),
 )
 def send_var(varID, varValue):
-    ret_varSys, ret_varID, ret_varValue = send_command(varID, varValue)
-    return f"{ret_varSys}:{ret_varID}:{ret_varValue}"
+    ret_varID, ret_varValue = send_command(varID, varValue)
+    return f"{ret_varID}:{ret_varValue}"
 
 
 
