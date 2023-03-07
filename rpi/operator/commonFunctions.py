@@ -15,6 +15,8 @@ def setupIPs(use_case):
     return pi_IP, laptop_IP
 
 def parseMessage(message):
-
-    return
+    strMessage = message.decode("utf-8")
+    varID = strMessage.split(':')[0]
+    varValue = strMessage.split(':')[0]
+    return varID, varValue
 

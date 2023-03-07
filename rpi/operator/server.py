@@ -1,6 +1,6 @@
 import socket
 import yaml
-from commonFunctions import setupIPs
+from commonFunctions import setupIPs, parseMessage
 
 def receiveMessages(pi_IP):
     TCP_IP = pi_IP 
@@ -14,8 +14,10 @@ def receiveMessages(pi_IP):
         conn, addr = s.accept()
         print ('Connection address:', addr)
         data = conn.recv(BUFFER_SIZE)
+        varID, varValue = parseMessage(data)
         if not data: break
-        print ("received data:", data)
+        print( "received ID: ", varID)
+        print ("received data: ", varValue)
         conn.send(data)  # echo
         conn.close()
     return

@@ -3,7 +3,7 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 # this is what sends a command to the pi
 import socket
-from commonFunctions import setupIPs 
+from commonFunctions import setupIPs, parseMessage 
 global pi_IP
 
 def send_command(varID, varValue):
@@ -19,11 +19,12 @@ def send_command(varID, varValue):
         data = s.recv(BUFFER_SIZE)
         s.close()
         break
+    
+    ret_varID, ret_varValue = parseMessage(data)
+    return ret_varID, ret_varValue
 
-    return data
 
-
-## DAsh Variables ####
+## Dash Variables ####
 box_style={'backgroundColor':'#ffffff','border': '1px solid black','borderRadius': '4px', 'maxHeight': '30px', 'maxWidth':'300px', 'overflow': 'auto', 'padding':4}
 page_background='#999999'
 
@@ -60,8 +61,8 @@ app.layout = html.Div(
     Input("excavator:motor_speed", "value"),
 )
 def send_var(varID, varValue):
-    varReturn = send_command(varID, varValue)
-    return f"{varReturn}"
+    ret_varID, ret_varValue = send_command(varID, varValue)
+    return f"{ret_varID}:{ret_varValue}"
 
 
 @app.callback(
