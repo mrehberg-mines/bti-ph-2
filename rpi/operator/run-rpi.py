@@ -9,7 +9,8 @@ def setupPi():
     # read in yaml data
     with open('gpio_bindings.yaml', 'r') as file:
       bindings = yaml.safe_load(file)
-    
+      
+    GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     
     for pin in bindings.keys():
