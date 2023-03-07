@@ -1,5 +1,6 @@
 import socket
-import RPi.GPIO
+import yaml
+import RPi.GPIO as GPIO
 from commonFunctions import setupIPs, parseMessage
 global bindings
 
@@ -14,7 +15,7 @@ def setupPi():
     for pin in bindings.keys():
         pin_Num = bindings[pin]['pin']
         pin_Type = bindings[pin]['type']
-        pin_Defualt = bindings[pin]['defualt']
+        pin_Defualt = bindings[pin]['initial']
 
         if pin_Type == 'DO':
             if pin_Defualt == True:
@@ -24,7 +25,7 @@ def setupPi():
         else: 
             print('Unspecified Pin Type') 
     print('Pin Setup Complete')
-    return 
+    return bindings
 
 
 def writeCommand(varID, varValue):
@@ -75,5 +76,5 @@ def receiveMessages(pi_IP):
 if __name__  == '__main__':   
     use_case = 'MattHome'
     pi_IP, laptop_IP = setupIPs(use_case)
-    setupPi()
+    bindings = setupPi()
     receiveMessages(pi_IP)

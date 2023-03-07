@@ -1,9 +1,9 @@
 hammer_power:
   pin: 0
   type: "DO"
-  default: false
+  initial: false
 
 hammer_height_power:
   pin: 1
   type: "DO"
-  defualt: true
+  initial: true
