@@ -9,7 +9,7 @@ def setupPi():
     # read in yaml data
     with open('gpio_bindings.yaml', 'r') as file:
       bindings = yaml.safe_load(file)
-      
+
     GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
     
@@ -34,11 +34,11 @@ def writeCommand(varID, varValue):
     pin_Type = bindings[varID]['type']
 
     if pin_Type == 'DO':
-        if varValue == True:
+        if varValue == "True":
             #just putting a pritn statement to not cause an error
             print('high')
             #make out put high
-        elif varValue == False:
+        elif varValue == "False":
             #just putting a pritn statement to not cause an error
             print('low')
             # make output low
@@ -49,7 +49,7 @@ def writeCommand(varID, varValue):
     
     #this is just a placeholder so it will run
     feedback = f'{varID}:{varValue}'
-    return feedback
+    return str.encode(feedback)
 
 
 def receiveMessages(pi_IP):

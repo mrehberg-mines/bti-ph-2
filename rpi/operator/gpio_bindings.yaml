@@ -7,3 +7,13 @@ hammer_height_power:
   pin: 1
   type: "DO"
   initial: true
+
+excavator_motor_power:
+  pin: 3
+  type: "DO"
+  initial: true
+
+excavator_motor_speed:
+  pin: 4
+  type: "DO"
+  initial: true
