@@ -3,9 +3,11 @@ from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 # this is what sends a command to the pi
 import socket
+from commonFunctions import setupIPs 
+global pi_IP
 
 def send_command(varID, varValue):
-    TCP_IP = '192.168.0.241' 
+    TCP_IP = pi_IP
     TCP_PORT = 5005
     BUFFER_SIZE = 1024
     MESSAGE = f"{varID}:{varValue}"
@@ -20,11 +22,10 @@ def send_command(varID, varValue):
 
     return data
 
+
 ## DAsh Variables ####
 box_style={'backgroundColor':'#ffffff','border': '1px solid black','borderRadius': '4px', 'maxHeight': '30px', 'maxWidth':'300px', 'overflow': 'auto', 'padding':4}
 page_background='#999999'
-
-
 
 ### DASH Application #######
 
@@ -72,7 +73,10 @@ def send_var(varID, varValue):
     varReturn = send_command(varID, varValue)
     return f"{varReturn}"
 
+
+
+
 if __name__ == '__main__':
-    # app.run_server(debug=False)
-    
+    use_case = 'MattHome'
+    pi_IP, laptop_IP = setupIPs(use_case)
     app.run_server(debug=True)
