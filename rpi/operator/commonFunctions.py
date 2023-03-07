@@ -16,7 +16,8 @@ def setupIPs(use_case):
 
 def parseMessage(message):
     strMessage = message.decode("utf-8")
-    varID = strMessage.split(':')[0]
-    varValue = strMessage.split(':')[0]
-    return varID, varValue
+    varSys = strMessage.split(':')[0]
+    varID = strMessage.split(':')[1]
+    varValue = strMessage.split(':')[2]
+    return varSys, varID, varValue
 

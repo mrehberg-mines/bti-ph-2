@@ -14,10 +14,11 @@ def receiveMessages(pi_IP):
         conn, addr = s.accept()
         print ('Connection address:', addr)
         data = conn.recv(BUFFER_SIZE)
-        varID, varValue = parseMessage(data)
+        varSys, varID, varValue = parseMessage(data)
         if not data: break
-        print( "received ID: ", varID)
-        print ("received data: ", varValue)
+        print("reveived Sys: ", varSys)
+        print("received ID: ", varID)
+        print("received data: ", varValue)
         conn.send(data)  # echo
         conn.close()
     return

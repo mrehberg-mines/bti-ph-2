@@ -61,8 +61,8 @@ app.layout = html.Div(
     Input("excavator:motor_speed", "value"),
 )
 def send_var(varID, varValue):
-    ret_varID, ret_varValue = send_command(varID, varValue)
-    return f"{ret_varID}:{ret_varValue}"
+    ret_varSys, ret_varID, ret_varValue = send_command(varID, varValue)
+    return f"{ret_varSys}:{ret_varID}:{ret_varValue}"
 
 
 @app.callback(
