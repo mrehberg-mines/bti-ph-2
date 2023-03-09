@@ -75,7 +75,7 @@ def receiveMessages(pi_IP):
 
 
 if __name__  == '__main__':   
-    use_case = 'MattHome'
+    use_case = 'Mines'
     pi_IP, laptop_IP = setupIPs(use_case)
     bindings = setupPi()
     receiveMessages(pi_IP)
