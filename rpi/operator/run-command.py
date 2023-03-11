@@ -74,7 +74,7 @@ app.layout = html.Div([
             id = "hammer_power",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="hammer_power:return"),
 
@@ -87,7 +87,7 @@ app.layout = html.Div([
             id = "hammer_height_up",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="hammer_height_up:return"),
 
@@ -100,7 +100,7 @@ app.layout = html.Div([
             id = "hammer_height_down",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="hammer_height_down:return"),
         html.Br()
@@ -123,7 +123,7 @@ app.layout = html.Div([
             id = "bucket_height_up",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="bucket_height_up:return"),
 
@@ -136,7 +136,7 @@ app.layout = html.Div([
             id = "bucket_height_down",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="bucket_height_down:return"),
 
@@ -149,7 +149,7 @@ app.layout = html.Div([
             id = "bucket_angle_up",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="bucket_angle_up:return"),
 
@@ -162,7 +162,7 @@ app.layout = html.Div([
             id = "bucket_angle_down",
             style= box_style,
             options=['On', 'Off'],
-            value='False'
+            value='Off'
         ),
         html.Div(id="bucket_angle_down:return"),
         html.Br()
@@ -171,7 +171,7 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-    Output("hammer_power", "children"),
+    Output("hammer_power:return", "children"),
     Input("hammer_power", "id"),
     Input("hammer_power", "value"),
 )
@@ -181,7 +181,7 @@ def send_var(varID, varValue):
 
 
 @app.callback(
-    Output("hammer_height_power", "children"),
+    Output("hammer_height_power:return", "children"),
     Input("hammer_height_power", "id"),
     Input("hammer_height_power", "value"),
 )
@@ -190,7 +190,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("hammer_height_up", "children"),
+    Output("hammer_height_up:return", "children"),
     Input("hammer_height_up", "id"),
     Input("hammer_height_up", "value"),
 )
@@ -199,7 +199,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("hammer_height_down", "children"),
+    Output("hammer_height_down:return", "children"),
     Input("hammer_height_down", "id"),
     Input("hammer_height_down", "value"),
 )
@@ -208,7 +208,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_height_power", "children"),
+    Output("bucket_height_power:return", "children"),
     Input("bucket_height_power", "id"),
     Input("bucket_height_power", "value"),
 )
@@ -217,7 +217,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_height_up", "children"),
+    Output("bucket_height_up:return", "children"),
     Input("bucket_height_up", "id"),
     Input("bucket_height_up", "value"),
 )
@@ -226,7 +226,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_height_down", "children"),
+    Output("bucket_height_down:return", "children"),
     Input("bucket_height_down", "id"),
     Input("bucket_height_down", "value"),
 )
@@ -235,7 +235,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_angle_power", "children"),
+    Output("bucket_angle_power:return", "children"),
     Input("bucket_angle_power", "id"),
     Input("bucket_angle_power", "value"),
 )
@@ -244,7 +244,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_angle_up", "children"),
+    Output("bucket_angle_up:return", "children"),
     Input("bucket_angle_up", "id"),
     Input("bucket_angle_up", "value"),
 )
@@ -253,7 +253,7 @@ def send_var(varID, varValue):
     return f"{varReturn}"
 
 @app.callback(
-    Output("bucket_angle_down", "children"),
+    Output("bucket_angle_down:return", "children"),
     Input("bucket_angle_down", "id"),
     Input("bucket_angle_down", "value"),
 )
