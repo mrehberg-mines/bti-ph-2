@@ -30,48 +30,236 @@ page_background='#999999'
 
 ### DASH Application #######
 
+
+## DASH Variables ####
+box_style={'backgroundColor':'#EBECF0','border': '0px solid grey','borderRadius': '4px', 'maxHeight': '30px', 'maxWidth':'90px', 'overflow': 'auto', 'padding':4}
+page_background='#111111'
+
+
+
+### DASH Application #######
+
 app = Dash(__name__)
-app.layout = html.Div(
-    children =[
+
+
+app.layout = html.Div([
+    html.Div([
+            html.H1(children = 'Rover Control Panel', 
+             style = {
+            'textAlign': 'center', 
+            'font-family' : 'monospace'
+            }
+            ),
+        html.H2(children = 'NASA Break The Ice!', 
+             style = {
+            'textAlign': 'center', 
+            'font-family' : 'monospace'
+            }
+            ),
+    ], style={'padding': 10, 'border':'1px solid white','borderRadius' :'10px', 'backgroundColor': '#808080'}
+    ),
+    html.Div([
+        html.H2(children = 'Hammer Controls', 
+             style = {
+            'textAlign': 'center', 
+            'font-family' : 'monospace'
+            }
+            ),
         html.Br(),
-        html.H4('excavator_motor_speed: '),
-        dcc.Input(
-            id="excavator_motor_speed", type="number",
-            debounce=True, placeholder=0, min=0, max=100,
-            style= box_style,
-        ),
-        html.Div(id="excavator_motor_speed:return"),
-        
-        html.Br(),
-        'excavator_motor_power: ',
+        html.H3(children = 'Hammer motor power: ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
         dcc.RadioItems(
-            id = "excavator_motor_power",
+            id = "hammer_power",
             style= box_style,
-            options=['True', 'False'],
+            options=['On', 'Off'],
             value='False'
         ),
-        html.Div(id="excavator_motor_power:return"),
-    ],
-    style={'padding': 10, 'border':'1px solid black','borderRadius' :'10px', 'backgroundColor':page_background}
-)
+        html.Div(id="hammer_power:return"),
+
+        html.Br(),
+        html.H3(children = 'Hammer height direction (up): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "hammer_height_up",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="hammer_height_up:return"),
+
+        html.Br(),
+        html.H3(children = 'Hammer height direction (down): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "hammer_height_down",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="hammer_height_down:return"),
+        html.Br()
+    ], 
+    style={'padding': 10, 'border':'1px solid white','borderRadius' :'10px', 'backgroundColor': '#89CFF0'}),
+    html.Div([
+        html.H2(children = 'Bucket Controls', 
+             style = {
+            'textAlign': 'center', 
+            'font-family' : 'monospace'
+            }
+            ),
+
+        html.Br(),
+        html.H3(children = 'Bucket height direction (up): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "bucket_height_up",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="bucket_height_up:return"),
+
+        html.Br(),
+        html.H3(children = 'Bucket height direction (down): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "bucket_height_down",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="bucket_height_down:return"),
+
+        html.Br(),
+        html.H3(children = 'Bucket angle direction (up): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "bucket_angle_up",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="bucket_angle_up:return"),
+
+        html.Br(),
+        html.H3(children = 'Bucket height direction (down): ', 
+            style = {
+            'font-family' : 'monospace'
+        }),
+        dcc.RadioItems(
+            id = "bucket_angle_down",
+            style= box_style,
+            options=['On', 'Off'],
+            value='False'
+        ),
+        html.Div(id="bucket_angle_down:return"),
+        html.Br()
+        ], style={'padding': 10, 'border':'1px solid white','borderRadius' :'10px', 'backgroundColor': '#FFCCCB'}
+        )
+])
 
 @app.callback(
-    Output("excavator_motor_speed:return", "children"),
-    Input("excavator_motor_speed", "id"),
-    Input("excavator_motor_speed", "value"),
+    Output("hammer_power", "children"),
+    Input("hammer_power", "id"),
+    Input("hammer_power", "value"),
 )
 def send_var(varID, varValue):
-    ret_varID, ret_varValue = send_command(varID, varValue)
-    return f"{ret_varID}:{ret_varValue}"
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
 
 @app.callback(
-    Output("excavator_motor_power:return", "children"),
-    Input("excavator_motor_power", "id"),
-    Input("excavator_motor_power", "value"),
+    Output("hammer_height_power", "children"),
+    Input("hammer_height_power", "id"),
+    Input("hammer_height_power", "value"),
 )
 def send_var(varID, varValue):
-    ret_varID, ret_varValue = send_command(varID, varValue)
-    return f"{ret_varID}:{ret_varValue}"
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("hammer_height_up", "children"),
+    Input("hammer_height_up", "id"),
+    Input("hammer_height_up", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("hammer_height_down", "children"),
+    Input("hammer_height_down", "id"),
+    Input("hammer_height_down", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_height_power", "children"),
+    Input("bucket_height_power", "id"),
+    Input("bucket_height_power", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_height_up", "children"),
+    Input("bucket_height_up", "id"),
+    Input("bucket_height_up", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_height_down", "children"),
+    Input("bucket_height_down", "id"),
+    Input("bucket_height_down", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_angle_power", "children"),
+    Input("bucket_angle_power", "id"),
+    Input("bucket_angle_power", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_angle_up", "children"),
+    Input("bucket_angle_up", "id"),
+    Input("bucket_angle_up", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
+
+@app.callback(
+    Output("bucket_angle_down", "children"),
+    Input("bucket_angle_down", "id"),
+    Input("bucket_angle_down", "value"),
+)
+def send_var(varID, varValue):
+    varReturn = send_command(varID, varValue)
+    return f"{varReturn}"
 
 
 

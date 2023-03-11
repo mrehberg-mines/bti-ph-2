@@ -7,3 +7,43 @@ hammer_height_power:
   pin: 1
   type: "DO"
   initial: false
+
+hammer_height_up:
+  pin: 2
+  type: "DO"
+  initial: false
+
+hammer_height_down:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_height_power:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_height_up:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_height_down:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_angle_power:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_angle_up:
+  pin: 2
+  type: "DO"
+  initial: false
+
+bucket_angle_down:
+  pin: 2
+  type: "DO"
+  initial: false

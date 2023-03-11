@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 from commonFunctions import setupIPs, parseMessage
 global bindings
 
-def setupPi():
+def setupPi(pins:bool ):
     ## create all GPIO bindings for the PI
     # read in yaml data
     with open('gpio_bindings.yaml', 'r') as file:
@@ -12,19 +12,19 @@ def setupPi():
 
     GPIO.cleanup()
     GPIO.setmode(GPIO.BCM)
-    
-    for pin in bindings.keys():
-        pin_Num = bindings[pin]['pin']
-        pin_Type = bindings[pin]['type']
-        pin_Defualt = bindings[pin]['initial']
+    if pins:
+        for pin in bindings.keys():
+            pin_Num = bindings[pin]['pin']
+            pin_Type = bindings[pin]['type']
+            pin_Defualt = bindings[pin]['initial']
 
-        if pin_Type == 'DO':
-            if pin_Defualt == True:
-                GPIO.setup(pin_Num, GPIO.OUT, initial = GPIO.HIGH)
-            else:
-                GPIO.setup(pin_Num, GPIO.OUT, initial = GPIO.LOW)
-        else: 
-            print('Unspecified Pin Type') 
+            if pin_Type == 'DO':
+                if pin_Defualt == True:
+                    GPIO.setup(pin_Num, GPIO.OUT, initial = GPIO.HIGH)
+                else:
+                    GPIO.setup(pin_Num, GPIO.OUT, initial = GPIO.LOW)
+            else: 
+                print('Unspecified Pin Type') 
     print('Pin Setup Complete')
     return bindings
 
@@ -75,7 +75,7 @@ def receiveMessages(pi_IP):
 
 
 if __name__  == '__main__':   
-    use_case = 'Mines'
+    use_case = 'MattHome'
     pi_IP, laptop_IP = setupIPs(use_case)
-    bindings = setupPi()
+    bindings = setupPi(pins=False)
     receiveMessages(pi_IP)
